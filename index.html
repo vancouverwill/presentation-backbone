@@ -1,0 +1,107 @@
+<html xmlns:og="http://ogp.me/ns" xmlns:fb="http://www.facebook.com/2008/fbml" lang="en">
+<head>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Presentation</title>
+
+
+    <!-- Style -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="./assets/css/styles.css"/>
+
+
+    <!-- Javascript -->
+    <script type="text/javascript">
+    var Invoke = {
+        app: {
+            views: {},
+            collections: {},
+            models: {}
+        },
+        Env: {
+            scripts: {
+                vendors: [
+                    'https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js',
+                    './assets/js/vendors/json2.js',
+                    './assets/js/vendors/underscore-min.js',
+                    './assets/js/vendors/backbone-min.js',
+                    './assets/js/vendors/mustache.js',
+                    './assets/js/vendors/bootstrap.min.js',
+                ],
+                libs: [
+                    './assets/js/libs/utils.js',
+                ],
+                application: [
+                    './assets/js/app/views/header.js',
+                    './assets/js/app/views/content.js',
+                    './assets/js/app/views/footer.js',
+                    './assets/js/app/router.js',
+                ],
+            }
+        },
+    };
+    </script>
+</head>
+
+<body>
+
+    <!-- Container -->
+    <div id="header-container" class="header-container"></div>
+    <div id="content-container" class="content-container"></div>
+    <div id="footer-container" class="footer-container"></div>
+
+
+    <!-- Templates -->
+    <script type="text/template" id="tpl-header">
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="brand" href="./index.html">Presentation</a>
+                <div class="nav-collapse collapse">
+                    <ul class="nav">
+                        <li><a href="./#hello/Devs">Hello Devs!</a></li>
+                        <li class="divider-vertical"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    </script>
+
+
+    <script type="text/template" id="tpl-content">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <div class="content-hello">
+                    <p>Hello <span id="content-hello-name">World</span>!
+                    <p>Hello: <input type="text" class="input-medium" id="content-hello-input"/></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </script>
+
+
+    <script type="text/template" id="tpl-footer">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <div class="alert alert-info">
+                Find this tutorial on <a href="https://github.com/maxparm/presentation-backbone">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </script>
+
+    
+    <!-- Javascript -->
+    <script type="text/javascript" src="./assets/js/vendors/LAB.min.js"></script>
+    <script type="text/javascript" src="./assets/js/app/bootloader.js"></script>
+</body>
+</html>
