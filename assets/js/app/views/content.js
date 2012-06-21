@@ -7,8 +7,8 @@
  */
 var ContentView = Backbone.View.extend({
 
-	el: $("#content-container"),
-	template: $("#tpl-content").html(),
+	el: $("#hello-container"),
+	template: $("#tpl-hello").html(),
 
 	/**
 	 * Initialize the homepage
@@ -21,7 +21,7 @@ var ContentView = Backbone.View.extend({
 	 * Events
 	 */
 	events: {
-		'change #content-hello-input': 'changeNameInput'
+		'change #hello-input': 'inputChangeName'
 	},
 
 	/**
@@ -36,14 +36,21 @@ var ContentView = Backbone.View.extend({
 	 */
 	updateName: function (name) {
 		name = name || 'World';
-		$('#content-hello-name', this.el).html(name);
+		$('#hello-name', this.el).html(name);
 	},
 
 	/**
 	 * Detect change on name input
 	 */
-	changeNameInput: function () {
-		this.updateName($('#content-hello-input', this.el).val());
+	inputChangeName: function () {
+		this.updateName($('#hello-input', this.el).val());
+	},
+
+	/**
+	 * Clear container
+	 */
+	clear: function () {
+		this.$el.empty();
 	}
 
 });

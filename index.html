@@ -37,8 +37,8 @@
                 ],
                 application: [
                     './assets/js/app/views/header.js',
-                    './assets/js/app/views/content.js',
-                    './assets/js/app/views/footer.js',
+                    './assets/js/app/views/hello.js',
+                    './assets/js/app/views/links.js',
                     './assets/js/app/router.js',
                 ],
             }
@@ -51,8 +51,8 @@
 
     <!-- Container -->
     <div id="header-container" class="header-container"></div>
-    <div id="content-container" class="content-container"></div>
-    <div id="footer-container" class="footer-container"></div>
+    <div id="hello-container" class="hello-container"></div>
+    <div id="links-container" class="links-container"></div>
 
 
     <!-- Templates -->
@@ -60,11 +60,16 @@
     <div class="navbar navbar-fixed-top">
         <div class="navbar-inner">
             <div class="container">
-                <a class="brand" href="./index.html">Presentation</a>
+                <a class="brand" href="#hello">Presentation</a>
                 <div class="nav-collapse collapse">
                     <ul class="nav">
-                        <li><a href="./#hello/Devs">Hello Devs!</a></li>
+                        <li><a href="#hello">Hello World!</a></li>
+                        <li><a href="#hello/Devs">Hello Devs!</a></li>
                         <li class="divider-vertical"></li>
+                        <li><a href="#links">Links</a></li>
+                    </ul>
+                    <ul class="nav pull-right">
+                        <li><a href="#clear">Clear</a></li>
                     </ul>
                 </div>
             </div>
@@ -73,14 +78,13 @@
     </script>
 
 
-    <script type="text/template" id="tpl-content">
+    <script type="text/template" id="tpl-hello">
     <div class="container">
         <div class="row">
             <div class="span12">
-                <div class="content-hello">
-                    <h2>Hello <span id="content-hello-name">World</span>!</h2>
-                    <hr/>
-                    <p>Hello: <input type="text" class="input-medium" id="content-hello-input"/></p>
+                <div class="hello-content">
+                    <div class="page-header"><h2>Hello <span id="hello-name">World</span>!</h2></div>
+                    <p>Hello: <input type="text" class="input-medium" id="hello-input"/></p>
                 </div>
             </div>
         </div>
@@ -88,13 +92,16 @@
     </script>
 
 
-    <script type="text/template" id="tpl-footer">
+    <script type="text/template" id="tpl-links">
     <div class="container">
         <div class="row">
             <div class="span12">
-                <div class="alert alert-info">
-                Find this tutorial on <a href="https://github.com/maxparm/presentation-backbone">GitHub</a>
-                </div>
+                <div class="page-header"><h2>Links Manager</h2></div>
+                <ul id="links-list">
+
+                </ul>
+                <form id="links-form">
+                </form>
             </div>
         </div>
     </div>

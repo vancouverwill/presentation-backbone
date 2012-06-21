@@ -1,4 +1,4 @@
-/*global HeaderView, ContentView, FooterView */
+/*global HeaderView, HelloView, LinksView */
 
 /**
  * Main Router of the application
@@ -6,17 +6,21 @@
 var Router = Backbone.Router.extend({
 	routes: {
 		"": "home",
-		"hello/:name": "hello"
+		"clear": "clear",
+		"links": "links",
+		"hello": "hello",
+		"hello/:name": "helloName"
 	},
 	initialize: function () {
 		if (!Invoke.app.views.headerView) {
 			Invoke.app.views.headerView = new HeaderView();
 		}
-		if (!Invoke.app.views.contentView) {
-			Invoke.app.views.contentView = new ContentView();
+		Invoke.app.views.headerView.render();
+		if (!Invoke.app.views.helloView) {
+			Invoke.app.views.helloView = new HelloView();
 		}
-		if (!Invoke.app.views.footerView) {
-			Invoke.app.views.footerView = new FooterView();
+		if (!Invoke.app.views.linksView) {
+			Invoke.app.views.linksView = new LinksView();
 		}
 	},
 
@@ -24,15 +28,34 @@ var Router = Backbone.Router.extend({
 	 * Render HomePage
 	 */
 	home: function () {
-		Invoke.app.views.headerView.render();
-		Invoke.app.views.contentView.render();
-		Invoke.app.views.footerView.render();
+	},
+
+	/**
+	 * Render HomePage
+	 */
+	hello: function () {
+		Invoke.app.views.helloView.render();
 	},
 
 	/**
 	 * Say Hello!
 	 */
-	hello: function (name) {
-		Invoke.app.views.contentView.updateName(name);
+	helloName: function (name) {
+		Invoke.app.views.helloView.updateName(name);
+	},
+
+	/**
+	 * Say Hello!
+	 */
+	links: function () {
+		Invoke.app.views.linksView.render();
+	},
+
+	/**
+	 * Clear
+	 */
+	clear: function () {
+		Invoke.app.views.helloView.clearContainer();
+		Invoke.app.views.linksView.clearContainer();
 	}
 });
