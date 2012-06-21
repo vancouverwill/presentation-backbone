@@ -1,11 +1,28 @@
-.hello-container {
-  padding-top: 80px;
-  display: none;
+/******** BASE ********/
+/******** LAYOUT ********/
+/******** MODULE ********/
+.header-container {
+  height: 80px;
 }
-.hello-container .hello-content span {
-  color: red;
+.hello-container {
+  background: #dbfcfc;
 }
 .links-container {
-  display: none;
-  padding-top: 80px;
+  background: #ffefd6;
 }
+/******** STATE ********/
+.is-new {
+  color: green;
+}
+/******** THEME ********/
+.highlighted {
+  color: red;
+}
+.block {
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+}
+/******** MIXINS ********/

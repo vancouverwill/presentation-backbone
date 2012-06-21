@@ -1,33 +1,35 @@
-/*global Router */
+/*global $LAB, Invoke, Router */
 /**
- * Bootloader for the app 
+ * Bootloader for the js app 
  * - Load all relevant scripts in the required order
+ * - Start the js application router
  * 
  * Convention: https://github.com/maxparm/Frontend-Convention
  * @requires Invoke.Env.scripts
  */
-var scripts = Invoke.Env.scripts;
-$LAB.script(scripts.vendors)
+$LAB.script(Invoke.Env.scripts.vendors)
 	.wait()
-	.script(scripts.libs)
+	.script(Invoke.Env.scripts.libs)
 	.wait()
-	.script(scripts.application)
+	.script(Invoke.Env.scripts.application)
 	.wait(function () {
+
 
 		Invoke.app.router = new Router();
 		Backbone.history.start();
+
 		/**
 		 * Init Facebook and start application
 		 * @return {[type]} [description]
 		 */
 		// function fbAsyncInit() {
-		// 	Facebook.init(Invoke.Env.fb.init_args);
-		// 	Invoke.app.router = new Router();
+		//	Facebook.init(Invoke.Env.fb.init_args);
+		//	Invoke.app.router = new Router();
 		// }
 
 		// if (window.FB) {
-		// 	fbAsyncInit();
+		//	fbAsyncInit();
 		// } else {
-		// 	window.fbAsyncInit = fbAsyncInit;
+		//	window.fbAsyncInit = fbAsyncInit;
 		// }
 	});

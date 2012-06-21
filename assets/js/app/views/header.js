@@ -1,7 +1,5 @@
-/*global User, invokeTwitter */
-
 /**
- * Render the homepage view
+ * Render the header container
  * 
  * Convention: https://github.com/maxparm/Frontend-Convention
  */
@@ -11,15 +9,7 @@ var HeaderView = Backbone.View.extend({
 	template: $("#tpl-header").html(),
 
 	/**
-	 * Events
-	 */
-	events: {
-		'click #custom-hello': 'customHello'
-	},
-
-	/**
 	 * Initialize the homepage
-	 * - create user model
 	 */
 	initialize: function () {
 	},
@@ -29,11 +19,6 @@ var HeaderView = Backbone.View.extend({
 	 */
 	render: function () {
 		this.$el.html(this.template);
-	},
-
-
-	customHello: function () {
-		
 	}
 
 });

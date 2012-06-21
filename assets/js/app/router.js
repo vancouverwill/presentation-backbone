@@ -1,9 +1,13 @@
-/*global HeaderView, HelloView, LinksView */
+/*global Invoke, HeaderView, HelloView, LinksView */
 
 /**
- * Main Router of the application
+ * Router of the application
  */
 var Router = Backbone.Router.extend({
+
+	/**
+	 * Routhe handle by backbone app
+	 */
 	routes: {
 		"": "home",
 		"clear": "clear",
@@ -11,6 +15,11 @@ var Router = Backbone.Router.extend({
 		"hello": "hello",
 		"hello/:name": "helloName"
 	},
+
+	/**
+	 * Initialize call
+	 * - use to cache the view
+	 */
 	initialize: function () {
 		if (!Invoke.app.views.headerView) {
 			Invoke.app.views.headerView = new HeaderView();
@@ -25,13 +34,13 @@ var Router = Backbone.Router.extend({
 	},
 
 	/**
-	 * Render HomePage
+	 * Render Home Page
 	 */
 	home: function () {
 	},
 
 	/**
-	 * Render HomePage
+	 * Render Hello World Page
 	 */
 	hello: function () {
 		Invoke.app.views.helloView.render();
@@ -45,14 +54,14 @@ var Router = Backbone.Router.extend({
 	},
 
 	/**
-	 * Say Hello!
+	 * Render Links Page
 	 */
 	links: function () {
 		Invoke.app.views.linksView.render();
 	},
 
 	/**
-	 * Clear
+	 * Clear the containers
 	 */
 	clear: function () {
 		Invoke.app.views.helloView.clearContainer();

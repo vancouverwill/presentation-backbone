@@ -1,14 +1,44 @@
+/******** BASE ********/
+
+
+
+/******** LAYOUT ********/
+
+
+
+/******** MODULE ********/
+.header-container {
+	height:80px;
+}
 .hello-container {
-	padding-top:80px;
-	display:none;
-	.hello-content {
-		span {
-			color:red;
-		}
-	}
+	background:#dbfcfc;
+}
+.links-container {
+	background:#ffefd6;
 }
 
-.links-container {
-	display:none;
-	padding-top:80px;
+
+
+/******** STATE ********/
+.is-new {
+	color: green;
+}
+
+
+/******** THEME ********/
+.highlighted {
+	color:red;
+}
+.block {
+	.border-radius();
+	padding:10px;	
+	margin:10px;	
+}
+
+
+/******** MIXINS ********/
+.border-radius(@round: 5px) {
+	border-radius: @round;
+	-webkit-border-radius: @round;
+	-moz-border-radius: @round;
 }

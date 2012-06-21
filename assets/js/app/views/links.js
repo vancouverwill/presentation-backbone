@@ -13,7 +13,7 @@ var LinksView = Backbone.View.extend({
 
 	/**
 	 * Initialize the homepage
-	 * - create user model
+	 * - load Links collection
 	 */
 	initialize: function () {
 
@@ -87,7 +87,7 @@ var LinksView = Backbone.View.extend({
 	},
 
 	/**
-	 * Clear container
+	 * Clear links container
 	 */
 	clearContainer: function () {
 		this.$el.empty().hide();

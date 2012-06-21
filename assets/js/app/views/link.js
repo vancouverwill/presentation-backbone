@@ -1,5 +1,3 @@
-/*global Links */
-
 /**
  * Render a unique link row
  * 
@@ -9,6 +7,14 @@ var LinkView = Backbone.View.extend({
 
 	tagName: 'tr',
 	template: $("#tpl-link").html(),
+	model: null,
+
+	/**
+	 * Events
+	 */
+	events: {
+		"click .delete": "clear"
+	},
 
 	/**
 	 * Initialize the link view
@@ -22,13 +28,6 @@ var LinkView = Backbone.View.extend({
 	render: function () {
 		this.$el.html(Mustache.render(this.template, this.model.toJSON()));
 		return this;
-	},
-
-	/**
-	 * Events
-	 */
-	events: {
-		"click .delete": "clear"
 	},
 
 	/**

@@ -1,4 +1,4 @@
-/*global User, invokeTwitter */
+/*global  */
 
 /**
  * Render the hello container
@@ -12,7 +12,6 @@ var HelloView = Backbone.View.extend({
 
 	/**
 	 * Initialize the homepage
-	 * - create user model
 	 */
 	initialize: function () {
 	},
@@ -40,14 +39,14 @@ var HelloView = Backbone.View.extend({
 	},
 
 	/**
-	 * Detect change on name input
+	 * Trigered after change on name input
 	 */
 	inputChangeName: function () {
 		this.updateName($('#hello-input', this.el).val());
 	},
 
 	/**
-	 * Clear container
+	 * Clear hello container
 	 */
 	clearContainer: function () {
 		this.$el.empty().hide();
