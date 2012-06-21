@@ -28,7 +28,7 @@ var HelloView = Backbone.View.extend({
 	 * Render the view
 	 */
 	render: function () {
-		this.$el.html(this.template);
+		this.$el.html(this.template).show();
 	},
 
 	/**
@@ -50,7 +50,7 @@ var HelloView = Backbone.View.extend({
 	 * Clear container
 	 */
 	clearContainer: function () {
-		this.$el.empty();
+		this.$el.empty().hide();
 	}
 
 });

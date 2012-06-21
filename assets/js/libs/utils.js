@@ -11,7 +11,7 @@ var utils = {
 	 * @param  {object} object
 	 */
 	log: function (message, object) {
-		if (Invoke.debug && typeof console !== "undefined") {
+		if (typeof console !== "undefined") {
 			if (!object) {
 				console.log(message);
 			} else {

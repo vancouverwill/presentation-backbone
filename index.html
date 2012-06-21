@@ -1,12 +1,11 @@
-<html xmlns:og="http://ogp.me/ns" xmlns:fb="http://www.facebook.com/2008/fbml" lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-
-    <!-- Meta -->
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1"> 
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <title>Presentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Maxime Parmentier">
+    <meta name="description" content="First presentation of the frontend stack used by SVC">
+    <title>1. Presentation Backbone</title>
 
 
     <!-- Style -->
@@ -31,14 +30,18 @@
                     './assets/js/vendors/backbone-min.js',
                     './assets/js/vendors/mustache.js',
                     './assets/js/vendors/bootstrap.min.js',
+                    './assets/js/vendors/backbone.localStorage-min.js',
                 ],
                 libs: [
                     './assets/js/libs/utils.js',
                 ],
                 application: [
+                    './assets/js/app/models/link.js',
+                    './assets/js/app/collections/links.js',
                     './assets/js/app/views/header.js',
                     './assets/js/app/views/hello.js',
                     './assets/js/app/views/links.js',
+                    './assets/js/app/views/link.js',
                     './assets/js/app/router.js',
                 ],
             }
@@ -96,15 +99,45 @@
     <div class="container">
         <div class="row">
             <div class="span12">
-                <div class="page-header"><h2>Links Manager</h2></div>
-                <ul id="links-list">
 
-                </ul>
-                <form id="links-form">
+                <div class="page-header"><h2>Links Manager</h2></div>
+				<table id="links-table" class="table table-bordered table-striped">
+					<thead>
+						<tr>
+							<th>Title</th>
+							<th>URL</th>
+							<th>Action</th>
+						</tr>
+					</thead>
+					<tbody></tbody>
+				</table>
+
+                <div class="page-header"><h2>Add a Link</h2></div>
+                <form id="links-form" class="form-horizontal">
+					<fieldset>
+					    <div class="control-group">
+						    <label class="control-label" for="title">Title</label>
+							<div class="controls"><input type="text" class="input-xlarge" id="links-form-title" name="title"></div>
+						</div>
+					    <div class="control-group">
+						    <label class="control-label" for="url">Url</label>
+							<div class="controls"><input type="text" class="input-xlarge" id="links-form-url" name="url"></div>
+						</div>
+					    <div class="form-actions">
+							<button type="submit" class="btn btn-primary">Save</button>
+						</div>
+					</fieldset>
                 </form>
             </div>
         </div>
     </div>
+    </script>
+
+
+    <script type="text/template" id="tpl-link">
+		<th>{{title}}</th>
+		<th><a href="{{url}}">{{url}}</a></th>
+		<th><a class="delete">delete</a></th>
     </script>
 
     

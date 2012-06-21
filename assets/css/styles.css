@@ -1,9 +1,11 @@
 .hello-container {
   padding-top: 80px;
+  display: none;
 }
 .hello-container .hello-content span {
   color: red;
 }
 .links-container {
+  display: none;
   padding-top: 80px;
 }
